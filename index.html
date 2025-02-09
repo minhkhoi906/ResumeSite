@@ -6,21 +6,22 @@
     <title>Profile Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="src/css/styles.css" />
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("src/layouts/header.html")
+                .then(response => response.text())
+                .then(data => document.getElementById("header").innerHTML = data);
+
+            fetch("src/layouts/footer.html")
+                .then(response => response.text())
+                .then(data => document.getElementById("footer").innerHTML = data);
+        });
+
+    </script>
 </head>
 
 <body>
-    <header>
-        <div class="profile-info">
-            <div class="dot"></div>
-            <span class="name">Khoi Nguyen</span>
-            <span class="role">Software Engineering</span>
-        </div>
-        <nav>
-            <a href="#resume">Resume</a>
-            <a href="#project">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    <div id="header"></div>
     <main>
         <div class="left">
             <div class="profile-pic">
@@ -41,29 +42,7 @@
             </div>
         </div>
     </main>
-    <footer class="footer">
-        <hr>
-        <div class="elements">
-            <div>
-                <h2>Phone</h2>
-                <p>123-456-7890</p>
-            </div>
-            <div>
-                <h2>Email</h2>
-                <p>minhkhoi906@gmail.com</p>
-            </div>
-            <div>
-                <h2>Follow Me</h2>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div>
-                <p>© 2025 By Khoi Nguyen.</p>
-            </div>
-        </div>
-    </footer>
+    <div id="footer"></div>
 </body>
 
 </html>
