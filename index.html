@@ -4,61 +4,35 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page</title>
+    <title>Home</title>
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="src/css/header.css">
-    <link rel="stylesheet" href="src/css/footer.css">
-    <link rel="stylesheet" href="src/css/main.css">
-    <link rel="stylesheet" href="src/css/resume.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/resume.css">
+
+    <script src="scripts/layoutLoader.js"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            loadLayout("src/layouts/header.html", "header");
-            loadLayout("src/layouts/footer.html", "footer");
-            loadLayout("src/layouts/home.html", "home");
+        document.addEventListener("DOMContentLoaded", () => {
+            const layouts = [
+                { url: "layouts/header.html", elementId: "header" },
+                { url: "layouts/footer.html", elementId: "footer" },
+                { url: "views/homeView.html", elementId: "content" }
+            ];
+
+            layouts.forEach(({ url, elementId }) => loadLayout(url, elementId));
         });
-
-        function loadLayout(url, elementId) {
-            fetch(url)
-                .then(response => {
-                    if (!response.ok) throw new Error(`Failed to load ${url}`);
-                    return response.text();
-                })
-                .then(data => document.getElementById(elementId).innerHTML = data)
-                .catch(error => console.error("Error loading content:", error));
-        }
-
-        function loadContent(page) {
-            let content = document.getElementById("home"); // Load content inside #home div
-            content.classList.add("fade-out");
-
-            fetch(page)
-                .then(response => {
-                    if (!response.ok) throw new Error(`Failed to load ${page}`);
-                    return response.text();
-                })
-                .then(data => {
-                    setTimeout(() => {
-                        content.innerHTML = data;
-                        content.classList.remove("fade-out");
-                    }, 500);
-                })
-                .catch(error => console.error("Error loading content:", error));
-        }
     </script>
 </head>
 
 <body>
     <div id="header"></div>
-
-    <main class="content">
-        <div id="home"></div>
-    </main>
-
+    <main class="content" id="content"></main>
     <div id="footer"></div>
 </body>
 

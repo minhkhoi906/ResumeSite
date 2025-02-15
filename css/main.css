@@ -55,24 +55,24 @@ body {
     object-fit: cover;
 }
 
-.text-right {
+.profile-text {
     text-align: left;
 }
 
-.text-right h1 {
+.profile-text h1 {
     font-size: 100px;
     font-weight: bold;
     margin: 0%;
     font-family: 'Trebuchet MS', sans-serif;
 }
 
-.text-right h2 {
+.profile-text h2 {
     font-size: 1.25rem;
     font-weight: 600;
     font-family: 'Trebuchet MS', sans-serif;
 }
 
-.text-right p {
+.profile-text p {
     color: #4b5563;
     margin-top: 0.5rem;
     max-width: 28rem;
@@ -99,6 +99,7 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-decoration: none;
     border: solid black;
+    font-size: 1.3rem;
 }
 
 .buttons .resume {
