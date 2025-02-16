@@ -32,12 +32,37 @@ header {
     color: #6b7280;
 }
 
+nav {
+    display: flex;
+}
+
+.nav-link {
+    color: 6b7280;
+    position: relative;
+}
+
+.nav-link:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 60%;
+    background-color: black;
+}
+
 nav a {
     color: #4b5563;
     margin-left: 1.5rem;
     text-decoration: none;
+    transition: 0.3s;
 }
 
 nav a:hover {
     color: black;
+}
+
+.nav-link.active {
+    color: #ffc45c;
 }

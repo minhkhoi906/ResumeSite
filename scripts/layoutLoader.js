@@ -35,7 +35,18 @@ function loadContent(page) {
             setTimeout(() => {
                 content.innerHTML = data;
                 content.classList.remove("fade-out");
+                updateActiveNav(page); // Highlight current page
             }, 500);
         })
         .catch(error => console.error("Error loading content:", error));
+}
+
+function updateActiveNav(page) {
+    document.querySelectorAll(".nav-link").forEach(link => {
+        if (link.getAttribute("data-page") === page) {
+            link.classList.add("active");
+        } else {
+            link.classList.remove("active");
+        }
+    });
 }
