@@ -1,23 +1,23 @@
 .title {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     font-weight: bold;
     margin-bottom: 2rem;
     margin-left: 10%;
     margin-top: 5%;
 }
 
-.resume-content {
+.body-section {
     display: flex;
     margin-top: 5%;
     margin-left: 10%;
     margin-right: 5%;
 }
 
-.resume-content .left {
+.body-section .left {
     flex: 40%;
 }
 
-.resume-content .right {
+.body-section .right {
     flex: 60%;
 }
 
@@ -26,10 +26,6 @@
     font-weight: bold;
     margin-top: 0;
     margin-bottom: 1rem;
-}
-
-.experience {
-    margin-bottom: 2rem;
 }
 
 .experience-item {
@@ -50,6 +46,10 @@
 
 .experience-item p {
     margin: 0;
+}
+
+.experience-item ul {
+    padding: 0;
 }
 
 .resume hr {

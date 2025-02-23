@@ -5,7 +5,8 @@ header {
     padding: 1.5rem;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-family: 'Courier New', monospace;
+    font-family: 'Arial', sans-serif;
+    ;
 }
 
 .profile-info {
@@ -24,7 +25,6 @@ header {
 .profile-info .name {
     font-weight: bold;
     font-size: 1.125rem;
-    font-family: 'Trebuchet MS', sans-serif;
 }
 
 .profile-info .role {
@@ -48,7 +48,7 @@ nav {
     top: 50%;
     transform: translateY(-50%);
     width: 1px;
-    height: 60%;
+    height: 120%;
     background-color: black;
 }
 
