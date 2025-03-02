@@ -1,12 +1,16 @@
 <header>
     <div class="profile-info">
-        <div class="dot" onclick="loadContent('views/homeView.html')"></div>
-        <span class="name" onclick="loadContent('views/homeView.html')">Khoi Nguyen</span>
+        <a href="#">
+            <div class="dot" onclick="loadContent('views/homeView.html')"></div>
+        </a>
+        <a href="#" style="text-decoration: none; color: black;">
+            <span class="name" onclick="loadContent('views/homeView.html')">Khoi Nguyen</span>
+        </a>
         <span class="role">Software Engineering</span>
     </div>
     <nav>
-        <a class="nav-link" data-page="views/resumeView.html" onclick="loadContent('views/resumeView.html')">Resume</a>
-        <a class="nav-link" data-page="views/projectsView.html" onclick="loadContent('views/projectsView.html')">Projects</a>
-        <a class="nav-link" data-page="views/contactView.html" onclick="loadContent('views/contactView.html')">Contact</a>
+        <a class="nav-link" href="#" data-page="views/resumeView.html" onclick="loadContent('views/resumeView.html')">Resume</a>
+        <a class="nav-link" href="#" data-page="views/projectsView.html" onclick="loadContent('views/projectsView.html')">Projects</a>
+        <a class="nav-link" href="#" data-page="views/contactView.html" onclick="loadContent('views/contactView.html')">Contact</a>
     </nav>
 </header>
