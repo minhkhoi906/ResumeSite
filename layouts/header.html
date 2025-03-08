@@ -9,8 +9,25 @@
         <span class="role">Software Engineering</span>
     </div>
     <nav>
-        <a class="nav-link" href="#" data-page="views/resumeView.html" onclick="loadContent('views/resumeView.html')">Resume</a>
-        <a class="nav-link" href="#" data-page="views/projectsView.html" onclick="loadContent('views/projectsView.html')">Projects</a>
-        <a class="nav-link" href="#" data-page="views/contactView.html" onclick="loadContent('views/contactView.html')">Contact</a>
+        <a class="nav-link" href="#" data-page="views/resumeView.html"
+            onclick="loadContent('views/resumeView.html')">Resume</a>
+        <a class="nav-link" href="#" data-page="views/projectsView.html"
+            onclick="loadContent('views/projectsView.html')">Projects</a>
+        <a class="nav-link" href="#" data-page="views/contactView.html"
+            onclick="loadContent('views/contactView.html')">Contact</a>
     </nav>
+
+    <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        <ul class="mobile-menu">
+            <li><a href="#" data-page="views/resumeView.html" onclick="loadContent('views/resumeView.html')">Resume</a>
+            </li>
+            <li><a href="#" data-page="views/projectsView.html"
+                    onclick="loadContent('views/projectsView.html')">Projects</a></li>
+            <li><a href="#" data-page="views/contactView.html"
+                    onclick="loadContent('views/contactView.html')">Contact</a></li>
+        </ul>
+    </div>
 </header>

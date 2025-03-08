@@ -1,15 +1,11 @@
 .footer {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     background-color: #f7fafc;
-    padding: 2rem 0;
-    flex-wrap: nowrap;
+    padding: 2rem; /* Combines padding properties */
     align-items: center;
     font-family: 'Courier New', monospace;
     gap: 1.5rem;
-    margin-bottom: 1rem;
-    margin-left: 3%;
-    margin-right: 3%;
     border-top: 0.5px solid gray
 }
 
@@ -21,7 +17,6 @@
 
 .footer h2 {
     font-size: 1.25rem;
-    font-weight: bold;
     margin-bottom: 0.5rem;
     font-family: 'Trebuchet MS', sans-serif;
 }
@@ -44,6 +39,7 @@
 @media (max-width: 700px) {
     .footer {
         flex-direction: column;
+        align-items: normal;
     }
 
     .footer div {
