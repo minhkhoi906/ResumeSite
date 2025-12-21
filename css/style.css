@@ -1,3 +1,22 @@
+/* Industrial Blue Theme - Perfect for IoT/Tech Companies */
+:root {
+    --primary-color: #1E3A8A;        /* Deep Blue - primary brand */
+    --primary-light: #3B82F6;        /* Lighter Blue - hover states */
+    --primary-dark: #1E40AF;         /* Darker Blue - strong accents */
+    --secondary-color: #2563EB;      /* Tech Blue - secondary accent */
+    --accent-color: #0EA5E9;         /* Bright Blue - highlights */
+    --accent-light: #E0F2FE;         /* Very Light Blue - subtle backgrounds */
+    --text-primary: #0F172A;         /* Dark Navy - main text */
+    --text-secondary: #475569;       /* Slate Gray - secondary text */
+    --text-light: #64748B;           /* Light Slate - tertiary text */
+    --border-color: #CBD5E1;         /* Light Gray - borders/dividers */
+    --border-dark: #94A3B8;          /* Medium Gray - strong borders */
+    --background: #F8FAFC;           /* Light Blue Gray - main background */
+    --background-alt: #FFFFFF;       /* White - cards/surfaces */
+    --success-color: #0EA5E9;        /* Bright Blue - success states */
+    --link-color: #2563EB;           /* Tech Blue - links */
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -5,6 +24,7 @@ html {
 body {
     font-family: "Open Sans", sans-serif;
     margin: 0;
+    color: var(--text-primary);
 }
 
 .body_section {
@@ -31,22 +51,22 @@ a {
     font-family: "Lovely Home";
     font-size: 50px;
     font-weight: bold;
-    color: #351458;
+    color: var(--primary-dark);
 }
 
 .headerachor {
-    color: black;
+    color: var(--text-primary);
     margin: 0 7px 0 7px;
     font-size: 25px;
 }
 
 .headerachor:hover {
-    background-color: #f1f1f1;
+    background-color: var(--accent-light);
 }
 
 /* Section 1 */
 .column1 {
-    background-image: linear-gradient(#fefcfe, #ffffff);
+    background-image: linear-gradient(var(--background), var(--background-alt));
     padding: 8px 16px;
 }
 
@@ -144,19 +164,19 @@ span.wave {
 
 p {
     line-height: 2;
-    color: #868e96;
+    color: var(--text-secondary);
 }
 
 .btn {
     display: inline-block;
     width: 4.37rem;
     height: 4.37rem;
-    background: #e9e9e9;
+    background: var(--accent-light);
     padding: 0px 0px;
     margin: 10px;
     border-radius: 30%;
-    box-shadow: 0 5px 15px -5px #00000070;
-    color: #3498db;
+    box-shadow: 0 5px 15px -5px rgba(91, 75, 154, 0.3);
+    color: var(--primary-color);
     overflow: hidden;
     position: relative;
 }
@@ -169,7 +189,7 @@ p {
 
 .btn:hover i {
     transform: scale(1.3);
-    color: #f1f1f1;
+    color: var(--background);
 }
 
 .btn::before {
@@ -177,7 +197,7 @@ p {
     position: absolute;
     width: 120%;
     height: 120%;
-    background: #3498db;
+    background: var(--primary-color);
     transform: rotate(45deg);
     left: -110%;
     top: 90%;
@@ -383,7 +403,7 @@ li {
 
 footer {
     padding-top: 2%;
-    color: #868e96;
+    color: var(--text-secondary);
     text-align: center;
 }
 
@@ -391,7 +411,7 @@ footer {
 a:focus,
 button:focus,
 .btn:focus {
-    outline: 2px solid #3498db;
+    outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
 
@@ -401,7 +421,7 @@ button:focus,
 }
 
 .headerachor:hover {
-    background-color: #f1f1f1;
+    background-color: var(--accent-light);
     transform: translateY(-2px);
 }
 

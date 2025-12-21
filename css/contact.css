@@ -1,7 +1,27 @@
+/* Industrial Blue Theme - Perfect for IoT/Tech Companies */
+:root {
+    --primary-color: #1E3A8A;        /* Deep Blue - primary brand */
+    --primary-light: #3B82F6;        /* Lighter Blue - hover states */
+    --primary-dark: #1E40AF;         /* Darker Blue - strong accents */
+    --secondary-color: #2563EB;      /* Tech Blue - secondary accent */
+    --accent-color: #0EA5E9;         /* Bright Blue - highlights */
+    --accent-light: #E0F2FE;         /* Very Light Blue - subtle backgrounds */
+    --text-primary: #0F172A;         /* Dark Navy - main text */
+    --text-secondary: #475569;       /* Slate Gray - secondary text */
+    --text-light: #64748B;           /* Light Slate - tertiary text */
+    --border-color: #CBD5E1;         /* Light Gray - borders/dividers */
+    --border-dark: #94A3B8;          /* Medium Gray - strong borders */
+    --background: #F8FAFC;           /* Light Blue Gray - main background */
+    --background-alt: #FFFFFF;       /* White - cards/surfaces */
+    --success-color: #0EA5E9;        /* Bright Blue - success states */
+    --link-color: #2563EB;           /* Tech Blue - links */
+}
+
 body {
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
     margin: 0;
+    color: var(--text-primary);
 }
 
 .body_section {
@@ -24,7 +44,7 @@ a {
     font-family: "Lovely Home";
     font-size: 50px;
     font-weight: bold;
-    color: #351458;
+    color: var(--primary-dark);
 }
 
 @media only screen and (max-width: 764px) {
@@ -34,18 +54,18 @@ a {
         font-family: "Lovely Home";
         font-size: 40px;
         font-weight: bold;
-        color: #351458;
+        color: var(--primary-dark);
     }
 }
 
 .headerachor {
-    color: black;
+    color: var(--text-primary);
     margin: 0 7px 0 7px;
     font-size: 25px;
 }
 
 .headerachor:hover {
-    background-color: #f1f1f1;
+    background-color: var(--accent-light);
 }
 
 #contact {
@@ -53,7 +73,19 @@ a {
 }
 
 .first-section {
-    text-align: center;
+    padding: 40px 0;
+    min-height: 60vh;
+}
+
+.avatar-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-container {
+    position: relative;
+    display: inline-block;
 }
 
 .Profilepic {
@@ -61,13 +93,34 @@ a {
     width: 300px;
     height: 300px;
     border: 10px solid;
-    border-color: #6c63ff;
-    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.897);
+    border-color: var(--secondary-color);
+    box-shadow: 0 10px 30px -15px rgba(37, 99, 235, 0.4);
+    object-fit: cover;
 }
 
 .context {
-    text-align: center;
-    padding-top: 20px;
+    text-align: left;
+    padding: 20px 40px;
+}
+
+@media only screen and (max-width: 991px) {
+    .first-section {
+        padding: 20px 0;
+    }
+
+    .avatar-section {
+        margin-bottom: 30px;
+    }
+
+    .context {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .Profilepic {
+        width: 250px;
+        height: 250px;
+    }
 }
 
 h1 {
@@ -77,22 +130,23 @@ h1 {
 p {
     padding-top: 5px;
     padding-bottom: 5px;
-    color: #868e96;
+    color: var(--text-secondary);
 }
 
 .ico {
     padding: 0;
+    margin-top: 20px;
 }
 
 .icon {
     text-decoration: none;
     list-style: none;
-    margin: 0 7px 0;
-    display: inline;
+    margin: 0 10px 0 0;
+    display: inline-block;
 }
 
 .github {
-    color: gray;
+    color: var(--text-light);
 }
 
 .instagram {
@@ -111,16 +165,18 @@ p {
 .instagram:hover,
 .google:hover,
 .linkedin:hover {
-    color: black;
+    color: var(--secondary-color);
 }
 
 .Resume {
-    background-color: #6c63ff;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--background-alt);
 }
 
 .Resume:hover {
-    color: black;
-    background-color: white;
+    color: var(--background-alt);
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+    transform: scale(1.05);
 }
 
 .second-section {
@@ -132,12 +188,13 @@ p {
     margin-top: 30px;
     margin-bottom: 20px;
     font-size: 30px;
-    color: white;
-    background-color: #6c63ff;
+    color: var(--background-alt);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     padding: 10px 30px 10px;
     margin-left: 12%;
     margin-right: 12%;
     border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
 }
 
 .connection {
@@ -149,16 +206,22 @@ p {
 
 .sayhello {
     margin-top: 15px;
-    border: 1px solid #6c63ff;
+    border: 2px solid var(--secondary-color);
     border-radius: 10px;
     padding: 10px 20px 10px;
+    transition: all 0.3s ease;
+    color: var(--secondary-color);
+    font-weight: 600;
 }
 
 .sayhello:hover {
     text-align: none;
     text-decoration: none;
-    color: white;
-    background-color: #6c63ff;
+    color: var(--background-alt);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(30, 58, 138, 0.2);
 }
 
 span.wave {
@@ -223,6 +286,6 @@ span.wave {
 
 footer {
     padding-top: 2%;
-    color: #868e96;
+    color: var(--text-secondary);
     text-align: center;
 }
