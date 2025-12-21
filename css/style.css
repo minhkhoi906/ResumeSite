@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Open Sans", sans-serif;
     margin: 0;
@@ -381,4 +385,33 @@ footer {
     padding-top: 2%;
     color: #868e96;
     text-align: center;
+}
+
+/* Focus styles for accessibility */
+a:focus,
+button:focus,
+.btn:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+/* Improved link hover states */
+.headerachor {
+    transition: all 0.3s ease;
+}
+
+.headerachor:hover {
+    background-color: #f1f1f1;
+    transform: translateY(-2px);
+}
+
+/* Enhanced button transitions */
+.btn {
+    transition: all 0.3s ease;
+}
+
+/* Responsive image optimization */
+img {
+    max-width: 100%;
+    height: auto;
 }

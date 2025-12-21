@@ -4,20 +4,31 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Khoi Nguyen's Portfolio</title>
+    <meta name="description" content="Khoi Nguyen - Software Engineer specializing in IoT and embedded systems development. Expertise in C++, Python, Linux, and embedded hardware." />
+    <meta name="keywords" content="IoT Engineer, Embedded Systems, Software Engineer, C++, Python, Linux, Raspberry Pi, Bluetooth, UWB" />
+    <meta name="author" content="Khoi Nguyen" />
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Khoi Nguyen - Portfolio" />
+    <meta property="og:description" content="Software Engineer specializing in IoT and embedded systems development with expertise in C++, Python, and Linux." />
+    <meta property="og:url" content="https://minhkhoi906.github.io/" />
+
+    <title>Khoi Nguyen - Portfolio</title>
     <link rel="icon" href="imgs/coding.png" />
 
     <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://stackpath.bootstrapcdn.com">
 
     <!-- CSS - External libraries first, then custom -->
-
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Arizonia&family=Montserrat:wght@400;800&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -31,26 +42,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+    <script src="scripts/enhancements.js" defer></script>
 </head>
 
 <body class="container-fluid body_section">
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand brand-name" href="#">Khoi Nguyen</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link headerachor" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link headerachor" href="html/career.path.html">Resume</a></li>
-                    <li class="nav-item"><a class="nav-link headerachor" href="#">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link headerachor" href="html/contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <!-- Header Component -->
+    <div id="header-placeholder"></div>
     <section id="Home">
         <div class="row column1">
             <div class="col-lg-6 col-md-6 first-image">
@@ -64,17 +61,17 @@
                     in teams, enjoy learning new technologies, and focus on delivering solutions that make an impact.
                 </p>
                 <div class="social_media_icon">
-                    <a class="btn" href="https://www.instagram.com/" target="_blank">
-                        <i class="fab fa-instagram"></i>
+                    <a class="btn" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit my Instagram profile">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
                     </a>
-                    <a class="btn" href="https://www.linkedin.com/" target="_blank">
+                    <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit my LinkedIn profile">
                         <i class="fab fa-linkedin" aria-hidden="true"></i>
                     </a>
-                    <a class="btn" href="https://github.com/" target="_blank">
-                        <i class="fab fa-github"></i>
+                    <a class="btn" href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit my GitHub profile">
+                        <i class="fab fa-github" aria-hidden="true"></i>
                     </a>
-                    <a class="btn" href="https://gmail.com/" target="_blank">
-                        <i class="fab fa-google"></i>
+                    <a class="btn" href="mailto:minhkhoi906@gmail.com" aria-label="Send me an email">
+                        <i class="fab fa-google" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -84,17 +81,19 @@
         <h1>What I Do ?</h1>
         <div class="row feature-1">
             <div class="col-lg-6 col-md-6 Feature-first-image">
-                <img class="Feature-svg-image" src="imgs/iot-image.gif" alt="" />
+                <img class="Feature-svg-image" src="imgs/iot-image.gif" alt="IoT software development illustration" loading="lazy" />
             </div>
             <div class="col-lg-6 col-md-6">
                 <h1 class="Feature-Heading">IoT Software Development</h1>
                 <ul class="dev-icon">
                     <li><img class="cpp-icon"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg">
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+                            alt="C++ programming language icon">
                     </li>
-                    <li><i class="fab fa-python fa-5x" style="color: #3776ab"></i></li>
+                    <li><i class="fab fa-python fa-5x" style="color: #3776ab" aria-label="Python programming language"></i></li>
                     <li><img class="linux-icon"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg">
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
+                            alt="Linux operating system icon">
                     </li>
                 </ul>
                 <div class="Iot-development">
@@ -111,17 +110,20 @@
                 <h1 class="Feature-Heading">Software Development</h1>
                 <ul class="dev-icon">
                     <li><img class="raspberry-icon"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/raspberrypi/raspberrypi-original.svg" />
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/raspberrypi/raspberrypi-original.svg"
+                            alt="Raspberry Pi icon" />
                     </li>
-                    <li><i class="fab fa-node fa-5x" style="color: #679e63"></i></li>
-                    <li><i class="devicon-bash-plain colored fa-5x"></i></li>
-                    <li><i class="devicon-c-original colored fa-5x"></i></li>
+                    <li><i class="fab fa-node fa-5x" style="color: #679e63" aria-label="Node.js"></i></li>
+                    <li><i class="devicon-bash-plain colored fa-5x" aria-label="Bash shell scripting"></i></li>
+                    <li><i class="devicon-c-original colored fa-5x" aria-label="C programming language"></i></li>
                     <li><img class="gcc-icon"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gcc/gcc-original.svg" />
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gcc/gcc-original.svg"
+                            alt="GCC compiler icon" />
                     </li>
                     <li>
                         <img class="cmake-icon"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cmake/cmake-original.svg" />
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cmake/cmake-original.svg"
+                            alt="CMake build system icon" />
                     </li>
                 </ul>
                 <div class="Iot-development">
@@ -140,15 +142,13 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 Feature-second-image">
-                <img class="Feature-svg-image" src="imgs/IoT-Solutions.gif" alt="" />
+                <img class="Feature-svg-image" src="imgs/IoT-Solutions.gif" alt="IoT solutions and embedded systems development" loading="lazy" />
             </div>
         </div>
     </section>
-    <footer class="row justify-content-center">
-        <div class="col-lg-4 col-md-4">
-            <p>© 2025 By Khoi Nguyen.</p>
-        </div>
-    </footer>
+
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
 </body>
 
 </html>

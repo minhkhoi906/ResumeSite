@@ -1,33 +1,191 @@
-<div id="projects" class="projects">
-    <h1 class="title">Projects</h1>
-    <section class="body-section">
-        <div class="left">
-            <h2 class="section-title">Project 1</h2>
-            <p>Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double-click me to
-                update the content.</p>
-        </div>
-        <div class="right">
-            <img src="imgs/1.jpg" alt="Project 1" />
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Browse through Khoi Nguyen's portfolio of IoT and embedded systems projects, showcasing expertise in C++, Python, and Linux development." />
+    <title>Projects - Khoi Nguyen's Portfolio</title>
+    <link rel="icon" href="../imgs/coding.png" />
+
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://stackpath.bootstrapcdn.com">
+
+    <!-- CSS - External libraries first, then custom -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Arizonia&family=Montserrat:wght@400;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/career.path.css" />
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src="../scripts/enhancements.js" defer></script>
+</head>
+
+<body class="container-fluid body_section">
+    <!-- Header Component -->
+    <div id="header-placeholder"></div>
+
+    <section id="projects">
+        <div class="container">
+            <div class="Heading" style="text-align: center; padding: 5% 0 3%;">
+                <h1>My Projects</h1>
+                <p style="color: #868e96; max-width: 800px; margin: 20px auto;">
+                    Here are some of the projects I've worked on, showcasing my expertise in IoT development,
+                    embedded systems, and software engineering.
+                </p>
+            </div>
+
+            <!-- Project 1 -->
+            <div class="timeline">
+                <div class="timeline-section">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="timeline-box">
+                                <div class="box-title">
+                                    <i class="fas fa-microchip" aria-hidden="true"></i> IoT Device Management System
+                                    <p class="degree">Embedded Linux | C++ | Python</p>
+                                </div>
+                                <div class="box-content">
+                                    <p class="box-item">
+                                        Developed a comprehensive IoT device management system for Raspberry Pi-based devices,
+                                        including device configuration, monitoring, and OTA update mechanisms.
+                                    </p>
+                                    <p class="box-item">
+                                        <strong>Key Features:</strong>
+                                    </p>
+                                    <ul class="box-item">
+                                        <li>Real-time device monitoring and health checks</li>
+                                        <li>Secure OTA firmware updates with rollback capability</li>
+                                        <li>Mobile app integration for device configuration</li>
+                                        <li>Support for 2,000+ production devices</li>
+                                    </ul>
+                                    <p class="box-item">
+                                        <strong>Technologies:</strong> C++14/17, Python, Bash, Bluetooth LE, Linux Services, systemd
+                                    </p>
+                                    <!-- Uncomment and add your project links -->
+                                    <!-- <a class="btn btn-sm btn-primary" role="button" href="#" target="_blank">View Project</a>
+                                    <a class="btn btn-sm btn-dark" role="button" href="#" target="_blank">GitHub</a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="timeline-section">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="timeline-box">
+                                <div class="box-title">
+                                    <i class="fas fa-broadcast-tower" aria-hidden="true"></i> Ultra-Wideband Indoor Tracking
+                                    <p class="degree">Embedded C | Bluetooth | UWB</p>
+                                </div>
+                                <div class="box-content">
+                                    <p class="box-item">
+                                        Designed and implemented firmware for Bluetooth and Ultra-Wideband modules for advanced
+                                        indoor positioning and tracking solutions.
+                                    </p>
+                                    <p class="box-item">
+                                        <strong>Key Features:</strong>
+                                    </p>
+                                    <ul class="box-item">
+                                        <li>Sub-meter accuracy indoor positioning using UWB technology</li>
+                                        <li>Dual-mode Bluetooth and UWB communication</li>
+                                        <li>Low-power optimization for battery-operated devices</li>
+                                        <li>Real-time data transmission to server applications</li>
+                                    </ul>
+                                    <p class="box-item">
+                                        <strong>Technologies:</strong> C, Bluetooth LE, Ultra-Wideband (UWB), RTOS, I2C, UART
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="timeline-section">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="timeline-box">
+                                <div class="box-title">
+                                    <i class="fas fa-home" aria-hidden="true"></i> Smart Home Automation Platform
+                                    <p class="degree">Embedded Linux | IoT | Nordic nRF5x</p>
+                                </div>
+                                <div class="box-content">
+                                    <p class="box-item">
+                                        Built a complete smart home automation platform with firmware for IoT devices and
+                                        gateway services for centralized control.
+                                    </p>
+                                    <p class="box-item">
+                                        <strong>Key Features:</strong>
+                                    </p>
+                                    <ul class="box-item">
+                                        <li>Device firmware for lighting, HVAC, access control, and power management</li>
+                                        <li>Centralized gateway for device management and control</li>
+                                        <li>Deployed to 5,000+ devices in production</li>
+                                        <li>Mobile and web app integration</li>
+                                    </ul>
+                                    <p class="box-item">
+                                        <strong>Technologies:</strong> C, Zephyr RTOS, Nordic nRF5x, Embedded Linux, Python, BLE
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 Template - Add your own projects here -->
+                <div class="timeline-section">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="timeline-box">
+                                <div class="box-title">
+                                    <i class="fas fa-project-diagram" aria-hidden="true"></i> Your Project Title Here
+                                    <p class="degree">Tech Stack Goes Here</p>
+                                </div>
+                                <div class="box-content">
+                                    <p class="box-item">
+                                        Add your project description here. Describe what the project does and what problem it solves.
+                                    </p>
+                                    <p class="box-item">
+                                        <strong>Key Features:</strong>
+                                    </p>
+                                    <ul class="box-item">
+                                        <li>Feature 1</li>
+                                        <li>Feature 2</li>
+                                        <li>Feature 3</li>
+                                    </ul>
+                                    <p class="box-item">
+                                        <strong>Technologies:</strong> List your technologies here
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <section class="body-section">
-        <div class="left">
-            <h2 class="section-title">Project 2</h2>
-            <p>Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double-click me to
-                update the content.</p>
-        </div>
-        <div class="right">
-            <img src="imgs/1.jpg" alt="Project 1" />
-        </div>
-    </section>
-    <section class="body-section">
-        <div class="left">
-            <h2 class="section-title">Project 3</h2>
-            <p>Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double-click me to
-                update the content.</p>
-        </div>
-        <div class="right">
-            <img src="imgs/1.jpg" alt="Project 1" />
-        </div>
-    </section>
-</div>
+
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
+</body>
+
+</html>

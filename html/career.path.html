@@ -4,18 +4,23 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Khoi Nguyen's Portfolio</title>
+    <meta name="description" content="View Khoi Nguyen's professional career path, work experience, education, and technical skills in IoT and embedded systems development." />
+    <title>Resume - Khoi Nguyen's Portfolio</title>
     <link rel="icon" href="../imgs/coding.png" />
+
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://stackpath.bootstrapcdn.com">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
     <link rel="stylesheet" href="../css/career.path.css" />
-    <!-- <link rel="stylesheet" href="dark-mode.css" /> -->
     <link href="https://fonts.googleapis.com/css2?family=Arizonia&family=Montserrat:wght@400;800&display=swap"
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -27,60 +32,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+    <script src="../scripts/enhancements.js" defer></script>
 </head>
 
 <body class="container-fluid body_section">
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand brand-name" href="#">Khoi Nguyen</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link headerachor" href="../index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link headerachor" href="#">Resume</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link headerachor" href="#">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link headerachor" href="contact.html">Contact Me</a>
-                    </li>
-                    <!-- <li>
-                        <iframe id="toggle-iframe" onload="onIframeLoad()" src="toggle.html"></iframe>
-                    </li> -->
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <section id="Section1">
-        <div class="row">
-            <div class="col-lg-6 col-md">
-                <img class="Programming" src="Image/Programming.svg" alt="" />
-            </div>
-            <div class="col-lg-6 col-md Coding">
-                <h1>Competitive Programming</h1>
-                <ul class="competitive_icon">
-                    <li>
-                        <a href="https://www.hackerrank.com/" target="_blank">
-                            <i class="fab fa-hackerrank fa-4x"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://www.hackerearth.com/" target="_blank">
-                            <i class="iconify" data-icon="simple-icons:hackerearth" data-inline="false"
-                                data-width="50px" data-height="50px"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <!-- Header Component -->
+    <div id="header-placeholder"></div>
     <section>
         <div class="container">
             <div class="Heading">
@@ -100,7 +57,7 @@
                                 </div>
                                 <div class="box-content">
                                     <a class="btn btn-sm btn-dark float-right" role="button"
-                                        href="https://www.geocomply.com/" target="_blank"
+                                        href="https://www.geocomply.com/" target="_blank" rel="noopener noreferrer"
                                         style="color: white">Website</a>
                                     <p class="box-item">
                                         - Developed and maintained embedded software for IoT devices.<br>
@@ -123,7 +80,7 @@
                                 </div>
                                 <div class="box-content">
                                     <a class="btn btn-sm btn-dark float-right" role="button"
-                                        href="https://www.endava.com/" target="_blank" style="color: white">Website</a>
+                                        href="https://www.endava.com/" target="_blank" rel="noopener noreferrer" style="color: white">Website</a>
                                     <p class="box-item">
                                         - Researched and contributed to the enhancement of 5G radio technologies within
                                         Ericsson Radio Base Station products.
@@ -144,7 +101,7 @@
                                 </div>
                                 <div class="box-content">
                                     <a class="btn btn-sm btn-dark float-right" role="button"
-                                        href="https://vnggames.com/vn/en" target="_blank"
+                                        href="https://vnggames.com/vn/en" target="_blank" rel="noopener noreferrer"
                                         style="color: white">Website</a>
                                     <p class="box-item">
                                         - Designed and developed firmware for IoT devices using Nordic Semiconductor
@@ -180,7 +137,7 @@
                                 </div>
                                 <div class="box-content">
                                     <a class="btn btn-sm btn-dark float-right" role="button"
-                                        href="https://hcmut.edu.vn/en" target="_blank" style="color: white">Website</a>
+                                        href="https://hcmut.edu.vn/en" target="_blank" rel="noopener noreferrer" style="color: white">Website</a>
                                     <div class="box-item">
                                         💥 I have studied software engineering subjects like Data
                                         Structures, Algorithms, DBMS, OS, CA, CN etc.
@@ -194,60 +151,9 @@
             </div>
         </div>
     </section>
-    <!-- <section id="section3">
-        <div class="Heading">
-            <h1>Certifications</h1>
-        </div>
-        <div class="container certificate">
-            <div class="row">
-                <div class="col-md-4">
-                    <a target="_blank"
-                        href="https://drive.google.com/file/d/1UUptDeZZIcQRmsBUYdaL9Yj6kwFIxAxQ/view?usp=sharing">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="Image/C++.jpg" alt="Card image cap" />
-                            <div class="card-body">
-                                <p class="card-text certificate-text">
-                                    C++ with Data Structures and Algorithms <br /><span style="color: gray">-by Coding
-                                        Blocks</span>
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a target="_blank" href="https://www.sololearn.com/Certificate/1024-18007548/pdf/">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="Image/JavaScript.jpg" alt="Card image cap" />
-                            <div class="card-body">
-                                <p class="card-text certificate-text">JavaScript Basics</p>
-                                <p class="certificate-text" style="color: gray">
-                                    -by Sololearn
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a target="_blank"
-                        href="https://drive.google.com/file/d/1xSYrX-rAThs5GAo1YVGYF2XuRXukm0tf/view?usp=sharing">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="Image/Data Science.jpg" alt="Card image cap" />
-                            <div class="card-body">
-                                <p class="card-text certificate-text">Data Science</p>
-                                <p class="certificate-text" style="color: gray">-by _____</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <footer class="row justify-content-center">
-        <div class="col-lg-4 col-md-4">
-            <p>© 2025 By Khoi Nguyen.</p>
-        </div>
-    </footer>
-    <!-- <script src="dark-mode.js"></script> -->
+
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
 </body>
 
 </html>
