@@ -7,41 +7,56 @@
     'use strict';
 
     /**
+     * Component templates - embedded for GitHub Pages compatibility
+     */
+    const COMPONENTS = {
+        header: `<header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand brand-name" href="/index.html" data-home-link>Khoi Nguyen</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link headerachor" href="/index.html" data-nav-link="home">Home</a></li>
+                <li class="nav-item"><a class="nav-link headerachor" href="/html/career.path.html" data-nav-link="resume">Resume</a></li>
+                <li class="nav-item"><a class="nav-link headerachor" href="/html/projects.html" data-nav-link="projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link headerachor" href="/html/contact.html" data-nav-link="contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>`,
+        footer: `<footer class="row justify-content-center">
+    <div class="col-lg-4 col-md-4">
+        <p>© 2025 By Khoi Nguyen.</p>
+    </div>
+</footer>`
+    };
+
+    /**
      * Load header and footer components dynamically
      */
-    async function loadComponents() {
+    function loadComponents() {
         // Determine base path (root or subdirectory)
         const isRootPage = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html');
-        const basePath = isRootPage ? '' : '..';
 
         // Load header
         const headerPlaceholder = document.getElementById('header-placeholder');
         if (headerPlaceholder) {
-            try {
-                const headerResponse = await fetch(`${basePath}/components/header.html`);
-                const headerHTML = await headerResponse.text();
-                headerPlaceholder.innerHTML = headerHTML;
+            headerPlaceholder.innerHTML = COMPONENTS.header;
 
-                // Fix navigation links for current page context
-                fixNavigationLinks(isRootPage);
+            // Fix navigation links for current page context
+            fixNavigationLinks(isRootPage);
 
-                // Set active navigation after header is loaded
-                setActiveNavLink();
-            } catch (error) {
-                console.error('Error loading header:', error);
-            }
+            // Set active navigation after header is loaded
+            setActiveNavLink();
         }
 
         // Load footer
         const footerPlaceholder = document.getElementById('footer-placeholder');
         if (footerPlaceholder) {
-            try {
-                const footerResponse = await fetch(`${basePath}/components/footer.html`);
-                const footerHTML = await footerResponse.text();
-                footerPlaceholder.innerHTML = footerHTML;
-            } catch (error) {
-                console.error('Error loading footer:', error);
-            }
+            footerPlaceholder.innerHTML = COMPONENTS.footer;
         }
     }
 
@@ -208,9 +223,9 @@
     /**
      * Initialize all enhancements when DOM is ready
      */
-    async function init() {
+    function init() {
         // Load components first
-        await loadComponents();
+        loadComponents();
 
         // Then initialize other features
         animateOnScroll();
