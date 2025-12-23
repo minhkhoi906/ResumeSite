@@ -12,17 +12,17 @@
     const COMPONENTS = {
         header: `<header>
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand brand-name" href="/index.html" data-home-link>Khoi Nguyen</a>
+        <a class="navbar-brand brand-name" href="index.html" data-home-link>Khoi Nguyen</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link headerachor" href="/index.html" data-nav-link="home">Home</a></li>
-                <li class="nav-item"><a class="nav-link headerachor" href="/html/career.path.html" data-nav-link="resume">Resume</a></li>
-                <li class="nav-item"><a class="nav-link headerachor" href="/html/projects.html" data-nav-link="projects">Projects</a></li>
-                <li class="nav-item"><a class="nav-link headerachor" href="/html/contact.html" data-nav-link="contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link headerachor" href="index.html" data-nav-link="home">Home</a></li>
+                <li class="nav-item"><a class="nav-link headerachor" href="html/career.path.html" data-nav-link="resume">Resume</a></li>
+                <li class="nav-item"><a class="nav-link headerachor" href="html/projects.html" data-nav-link="projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link headerachor" href="html/contact.html" data-nav-link="contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -39,7 +39,9 @@
      */
     function loadComponents() {
         // Determine base path (root or subdirectory)
-        const isRootPage = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html');
+        const isRootPage = window.location.pathname === '/' ||
+                          window.location.pathname.endsWith('/index.html') ||
+                          window.location.pathname === '/index.html';
 
         // Load header
         const headerPlaceholder = document.getElementById('header-placeholder');
@@ -70,10 +72,8 @@
             const href = link.getAttribute('href');
 
             if (!isRootPage && href) {
-                // Remove leading slash for pages in subdirectories
-                if (href.startsWith('/')) {
-                    link.setAttribute('href', '..' + href);
-                }
+                // For pages in subdirectories (like html/), add ../ prefix
+                link.setAttribute('href', '../' + href);
             }
         });
     }
