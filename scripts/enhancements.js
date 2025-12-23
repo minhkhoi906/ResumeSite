@@ -62,13 +62,15 @@
      * Converts absolute paths to relative paths based on current directory depth
      */
     function fixNavigationLinks() {
-        // Get current path and calculate depth
+        // Get current path and calculate directory depth
         const currentPath = window.location.pathname;
-        const pathSegments = currentPath.split('/').filter(seg => seg && seg !== 'index.html');
-        const depth = pathSegments.length;
 
-        // Get base URL (root of the site)
-        const baseUrl = window.location.origin + '/';
+        // Remove the filename to get just the directory path
+        const currentDir = currentPath.substring(0, currentPath.lastIndexOf('/'));
+
+        // Calculate depth (number of directories deep from root)
+        // Empty or '/' means depth 0 (at root)
+        const depth = currentDir === '' || currentDir === '/' ? 0 : currentDir.split('/').filter(seg => seg).length;
 
         const links = document.querySelectorAll('[data-page]');
 
