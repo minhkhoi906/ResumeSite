@@ -12,17 +12,17 @@
     const COMPONENTS = {
         header: `<header>
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand brand-name" href="index.html" data-home-link>Khoi Nguyen</a>
+        <a class="navbar-brand brand-name" href="#home" data-page="/">Khoi Nguyen</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link headerachor" href="index.html" data-nav-link="home">Home</a></li>
-                <li class="nav-item"><a class="nav-link headerachor" href="html/career.path.html" data-nav-link="resume">Resume</a></li>
-                <li class="nav-item"><a class="nav-link headerachor" href="html/projects.html" data-nav-link="projects">Projects</a></li>
-                <li class="nav-item"><a class="nav-link headerachor" href="html/contact.html" data-nav-link="contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link headerachor" href="#home" data-page="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link headerachor" href="#resume" data-page="/html/career.path.html">Resume</a></li>
+                <li class="nav-item"><a class="nav-link headerachor" href="#projects" data-page="/html/projects.html">Projects</a></li>
+                <li class="nav-item"><a class="nav-link headerachor" href="#contact" data-page="/html/contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -38,18 +38,13 @@
      * Load header and footer components dynamically
      */
     function loadComponents() {
-        // Determine base path (root or subdirectory)
-        const isRootPage = window.location.pathname === '/' ||
-                          window.location.pathname.endsWith('/index.html') ||
-                          window.location.pathname === '/index.html';
-
         // Load header
         const headerPlaceholder = document.getElementById('header-placeholder');
         if (headerPlaceholder) {
             headerPlaceholder.innerHTML = COMPONENTS.header;
 
             // Fix navigation links for current page context
-            fixNavigationLinks(isRootPage);
+            fixNavigationLinks();
 
             // Set active navigation after header is loaded
             setActiveNavLink();
@@ -64,16 +59,40 @@
 
     /**
      * Fix navigation links based on current page location
+     * Converts absolute paths to relative paths based on current directory depth
      */
-    function fixNavigationLinks(isRootPage) {
-        const links = document.querySelectorAll('[data-nav-link], [data-home-link]');
+    function fixNavigationLinks() {
+        // Get current path and calculate depth
+        const currentPath = window.location.pathname;
+        const pathSegments = currentPath.split('/').filter(seg => seg && seg !== 'index.html');
+        const depth = pathSegments.length;
+
+        // Get base URL (root of the site)
+        const baseUrl = window.location.origin + '/';
+
+        const links = document.querySelectorAll('[data-page]');
 
         links.forEach(link => {
-            const href = link.getAttribute('href');
+            const targetPath = link.getAttribute('data-page');
 
-            if (!isRootPage && href) {
-                // For pages in subdirectories (like html/), add ../ prefix
-                link.setAttribute('href', '../' + href);
+            if (targetPath === '/') {
+                // Link to home page
+                if (depth === 0) {
+                    link.setAttribute('href', 'index.html');
+                } else {
+                    link.setAttribute('href', '../'.repeat(depth) + 'index.html');
+                }
+            } else {
+                // Link to other pages
+                const cleanPath = targetPath.replace(/^\//, ''); // Remove leading slash
+
+                if (depth === 0) {
+                    // We're at root, use path as-is
+                    link.setAttribute('href', cleanPath);
+                } else {
+                    // We're in subdirectory, go up then to target
+                    link.setAttribute('href', '../'.repeat(depth) + cleanPath);
+                }
             }
         });
     }
@@ -83,21 +102,22 @@
      */
     function setActiveNavLink() {
         const currentPath = window.location.pathname;
-        const navLinks = document.querySelectorAll('.nav-link');
+        const navLinks = document.querySelectorAll('[data-page]');
 
         navLinks.forEach(link => {
-            const linkPath = link.getAttribute('href');
+            const targetPage = link.getAttribute('data-page');
 
-            // Normalize paths for comparison
-            const normalizedCurrent = currentPath.replace(/^\/+|\/+$/g, '');
-            const normalizedLink = linkPath.replace(/^\.\.\/|^\/+|\/+$/g, '');
+            // Normalize current path
+            let normalizedCurrent = currentPath.replace(/^\/+|\/+$/g, '');
+            if (normalizedCurrent === '' || normalizedCurrent === 'index.html') {
+                normalizedCurrent = '/';
+            } else if (!normalizedCurrent.startsWith('/')) {
+                normalizedCurrent = '/' + normalizedCurrent;
+            }
 
-            // Check if current page matches link
-            if (normalizedCurrent.includes(normalizedLink) && linkPath !== '#') {
-                link.style.fontWeight = 'bold';
-                link.style.color = '#3498db';
-            } else if (normalizedCurrent === '' && normalizedLink === 'index.html') {
-                // Handle root index page
+            // Check if current page matches target
+            if (targetPage === normalizedCurrent ||
+                (targetPage === '/' && (currentPath === '/' || currentPath.endsWith('index.html')))) {
                 link.style.fontWeight = 'bold';
                 link.style.color = '#3498db';
             }
