@@ -58,12 +58,43 @@
     }
 
     /**
+     * Get the base path for the site (e.g., '/ResumeSite' or '')
+     * Detects if the site is served from a subdirectory
+     */
+    function getBasePath() {
+        const path = window.location.pathname;
+        const segments = path.split('/').filter(seg => seg);
+
+        // Common project folder names or detect from path
+        // If path starts with a folder name before index.html or html/, that's likely the base
+        if (segments.length > 0 && segments[0] !== 'index.html' && segments[0] !== 'html') {
+            // Check if first segment looks like a project name (not a file)
+            if (!segments[0].includes('.html')) {
+                return '/' + segments[0];
+            }
+        }
+
+        return '';
+    }
+
+    /**
      * Fix navigation links based on current page location
      * Converts absolute paths to relative paths based on current directory depth
      */
     function fixNavigationLinks() {
-        // Get current path and calculate directory depth
-        const currentPath = window.location.pathname;
+        // Get base path (e.g., '/ResumeSite' or '')
+        const basePath = getBasePath();
+
+        // Get current path and remove base path for calculation
+        let currentPath = window.location.pathname;
+        if (basePath && currentPath.startsWith(basePath)) {
+            currentPath = currentPath.substring(basePath.length);
+        }
+
+        // Ensure currentPath starts with /
+        if (!currentPath.startsWith('/')) {
+            currentPath = '/' + currentPath;
+        }
 
         // Remove the filename to get just the directory path
         const currentDir = currentPath.substring(0, currentPath.lastIndexOf('/'));
